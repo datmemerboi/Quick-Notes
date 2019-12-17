@@ -1,0 +1,16 @@
+{
+  "name": "quick-notes",
+  "version": "1.0.1",
+  "description": "Note Taker App",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron ."
+  },
+  "author": "DMB",
+  "license": "ISC",
+  "dependencies": {
+    "mongodb": "^3.4.0",
+    "redis": "^2.8.0"
+  }
+}
