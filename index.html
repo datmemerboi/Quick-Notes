@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Take Notes</title>
+	</head>
+	<style media="screen">
+		* {
+			font-size: 24px;
+			font-family: 'Lato', sans-serif;
+			background-color: rgb(0, 0, 0);
+		}
+		.note {
+			width: 18vw;
+			min-height: 10vh;
+			background-color: rgb(20, 20, 20);
+			color:white;
+			position: relative;
+			padding-top: 1vmin;
+			padding-bottom: 1vmin;
+			padding-left: 2vmin;
+			padding-right: 2vmin;
+			border-style: none;
+			border-radius: 8px;
+		}
+		.note:focus {
+			border-style: solid;
+			border-width: 2px;
+			border-color: #eee;
+		}
+		p {
+			background-color: transparent;
+			margin: 0;
+			padding: 0;
+		}
+		.break-line {
+			user-select: none;
+		}
+	</style>
+	<body>
+		<div class="note" contenteditable="true">
+			<p>Text all along.<br>Text every song.</p>
+			<p>Text every song.</p>
+		</div>
+		<br class="break-line">
+		<div class="note" contenteditable="true">
+			<p>Divi</p>
+			<p>Fivi</p>
+			<p>John</p>
+			<p>Bon</p>
+		</div>
+	</body>
+</html>
