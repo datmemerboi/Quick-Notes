@@ -1,4 +1,4 @@
-# .gitignore
+.gitignore
 /node_modules
 src/put.mjs
 index.ejs
