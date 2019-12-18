@@ -1,0 +1,27 @@
+# .gitignore
+/node_modules
+src/put.mjs
+index.ejs
+mongoPut.js
+package-lock.json
+redisgets.js
+try.html
+# <script src="./src/mongoGet.js"></script> -->
+
+# function createDiv(head, body) {
+# 	var br = document.createElement("BR");
+# 	br.setAttribute('class',"break-line");
+# 	var divi = document.createElement("DIV");
+# 	divi.setAttribute('class', "note");
+# 	divi.setAttribute('contenteditable', "true");
+# 	var text = document.createElement("P");
+# 	text.setAttribute('class', "text");
+# 	var bottomText = document.createElement("P");
+# 	bottomText.setAttribute('class', "bottom-text");
+# 	text.innerHTML = head;
+# 	bottomText.innerHTML = body;
+# 	divi.appendChild(text);
+# 	divi.appendChild(bottomText);
+# 	document.getElementById('container').appendChild(br);
+# 	document.getElementById('container').appendChild(divi);
+# }
