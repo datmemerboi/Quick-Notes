@@ -1,4 +1,4 @@
-function createDiv(head, body) {
+function createNote(head, body) {
 	var br = document.createElement("BR");
 	br.setAttribute('class',"break-line");
 	var divi = document.createElement("DIV");
@@ -26,7 +26,7 @@ MongoClient.connect("mongodb://localhost:27017", (err, conn)=>{
 			if(err)
 				throw err;
 			res.forEach( (a)=>{
-				createDiv(a['Head'], a['Body']);
+				createNote(a['Head'], a['Body']);
 			});
 		});
 	}
