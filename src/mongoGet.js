@@ -3,6 +3,7 @@ function createDiv(head, body) {
 	br.setAttribute('class',"break-line");
 	var divi = document.createElement("DIV");
 	divi.setAttribute('class', "note");
+	divi.setAttribute('name', "note");
 	divi.setAttribute('contenteditable', "true");
 	var text = document.createElement("P");
 	text.setAttribute('class', "text");
@@ -26,10 +27,8 @@ MongoClient.connect("mongodb://localhost:27017", (err, conn)=>{
 				throw err;
 			res.forEach( (a)=>{
 				createDiv(a['Head'], a['Body']);
-				// console.log(a['Head'], a['Body'])
 			});
 		});
 	}
 	conn.close();
 });
-alert("Welcome");
