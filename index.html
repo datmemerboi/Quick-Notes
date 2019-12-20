@@ -4,15 +4,14 @@
 		<meta charset="utf-8">
 		<title>Take Notes</title>
 	</head>
+	<script type="text/javascript" src="src/mongoPut.js"></script>
 	<link rel="stylesheet" href="css/master.css">
-	<script src="./src/mongoGet.js"></script>
+	<!-- <script src="./src/mongoGet.js"></script> -->
 	<link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
 	<body>
 		<div id="container">
-			<div class="note" contenteditable="true">
-				<p>Text all along.<br>Text this song.</p>
-				<p>Text every song.</p>
-			</div>
+			<div class="note"  name="note" contenteditable="true"><p>Roses are red.</p><p>Violets are blue.</p></div>
 		</div>
+		<button style="color:white;" onclick="document.getElementsByName('note').forEach((x)=>{printThiss(x.textContent)});">print</button>
 	</body>
 </html>
