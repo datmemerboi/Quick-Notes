@@ -4,14 +4,21 @@
 		<meta charset="utf-8">
 		<title>Take Notes</title>
 	</head>
-	<script type="text/javascript" src="src/mongoPut.js"></script>
 	<link rel="stylesheet" href="css/master.css">
-	<script src="./src/mongoGet.js"></script>
 	<link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
 	<body>
 		<div id="container">
-			<div class="note"  name="note" contenteditable="true"><p>Roses are red.</p><p>Violets are blue.</p></div>
+			<div class="note-padding">
+				<div class="note" name="note" contenteditable="true">
+					<p class="text">Roses are red.</p>
+					<p>Violets are blue.<br>So is everyone,that I knew..
+					I don't know what I wanna say,<br>
+					but don't force me into it. kay?
+					</p>
+				</div>
+			</div>
 		</div>
-		<button style="color:white;" onclick="document.getElementsByName('note').forEach((x)=>{printThiss(x.textContent)});">print</button>
 	</body>
+	<script src="src/mongoGet.js"></script>
+	<script src="src/mongoPut.js"></script>
 </html>

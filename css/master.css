@@ -7,7 +7,7 @@
 	width: 60vw;
 	height: auto;
 	position: absolute;
-	left: 20vw;
+	left: 28vw;
 }
 .note {
 	width: 18vw;
@@ -26,6 +26,11 @@
 	border-style: solid;
 	border-width: 2px;
 	border-color: rgb(239, 239, 239);
+}
+.note-padding {
+	display: inline-flex;
+	background-color: transparent;
+	padding: 1vmin;
 }
 p {
 	background-color: transparent;

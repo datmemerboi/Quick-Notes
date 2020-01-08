@@ -1,20 +1,25 @@
-function createNote(head, body) {
-	var br = document.createElement("BR");
-	br.setAttribute('class',"break-line");
+function createNote(Title, Content) {
+	var padded = document.createElement("DIV");
+	padded.setAttribute('class', "note-padding");
+	
 	var divi = document.createElement("DIV");
 	divi.setAttribute('class', "note");
 	divi.setAttribute('name', "note");
 	divi.setAttribute('contenteditable', "true");
+	
 	var text = document.createElement("P");
 	text.setAttribute('class', "text");
+	text.innerHTML = Title;
+	
 	var bottomText = document.createElement("P");
 	bottomText.setAttribute('class', "bottom-text");
-	text.innerHTML = head;
-	bottomText.innerHTML = body;
+	bottomText.innerHTML = Content;
+
 	divi.appendChild(text);
 	divi.appendChild(bottomText);
-	document.getElementById('container').appendChild(br);
-	document.getElementById('container').appendChild(divi);
+	
+	padded.appendChild(divi);
+	document.getElementById('container').appendChild(padded);
 }
 
 const MongoClient = require('mongodb').MongoClient;
@@ -26,7 +31,7 @@ MongoClient.connect("mongodb://localhost:27017", (err, conn)=>{
 			if(err)
 				throw err;
 			res.forEach( (a)=>{
-				createNote(a['Head'], a['Body']);
+				createNote(a['Title'], a['Content']);
 			});
 		});
 	}
