@@ -18,7 +18,15 @@
 				</div>
 			</div>
 		</div>
+		<div class="menu-bar">
+			<button class="btn add-btn" title="Add Note" onclick="switchnewnote()">+</button>
+		</div>
+		<div id="new-note" class="new-note">
+			<input type="text" name="new-title" class="text-input"><br clear="break-line">
+			<div name="new-content" class="bottom-text-input" contenteditable="true">Henlo</div>
+		</div>
 	</body>
-	<script src="src/mongoGet.js"></script>
-	<script src="src/mongoPut.js"></script>
+	<script defer src="src/handler.js"></script>
+	<script defer src="src/mongoGet.js"></script>
+	<script defer src="src/mongoPut.js"></script>
 </html>
