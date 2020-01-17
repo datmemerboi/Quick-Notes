@@ -48,13 +48,16 @@ p {
 	user-select: none;
 }
 .new-note {
-	width: 50vw;
+	width: 27vw;
 	height: auto;
-	background-color: transparent;
+	background-color:  rgb(20, 20, 20);
 	position: absolute;
 	top: 10vh;
 	left: 0vw;
 	display: none;
+	text-align: center;
+	padding: 3px;
+	border-radius: 5px;
 }
 .menu-bar {
 	width: 5vw;
@@ -64,24 +67,29 @@ p {
 	top: 0;
 }
 .btn {
-	width: 7vw;
+	width: 6vw;
 	height: 5vh;
 	border: none;
 	background-color:rgb(20, 20, 20);
 	color:rgb(255, 255, 255);
 }
 .add-btn {
-	width: 5vw;
+	width: 4vw;
 	border-radius: 50px;
 }
+.post-btn {
+	border-radius: 30px;
+	border: solid 1px white;
+}
+
 .text-input {
 	font-size: 32px;
 	font-weight: 600;
 	color: rgb(255, 255, 255);
+	height: inherit;
 }
 .bottom-text-input {
 	font-weight: 28px;
-	color:rgb(255, 255, 255);
 	height: auto;
-	width: 20vw;
+	color:rgb(255, 255, 255);
 }
