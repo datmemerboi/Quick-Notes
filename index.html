@@ -11,22 +11,26 @@
 			<div class="note-padding">
 				<div class="note" name="note" contenteditable="true">
 					<p class="text">Roses are red.</p>
-					<p>Violets are blue.<br>So is everyone,that I knew..
-					I don't know what I wanna say,<br>
-					but don't force me into it. kay?
+					<p>Violets are blue.<br>Can't see anything better..<br>
+					than me and you!
 					</p>
 				</div>
 			</div>
 		</div>
 		<div class="menu-bar">
-			<button class="btn add-btn" title="Add Note" onclick="switchnewnote()">+</button>
+			<button class="btn add-btn" title="New Note" onclick="switchNewNote()">+</button>
 		</div>
 		<div id="new-note" class="new-note">
-			<input type="text" name="new-title" class="text-input"><br clear="break-line">
-			<div name="new-content" class="bottom-text-input" contenteditable="true">Henlo</div>
+			<div id="new-title" name="new-title" class="text-input" contenteditable="true"></div><br class="break-line">
+			<div id="new-content" name="new-content" class="bottom-text-input" contenteditable="true"></div><br clear="break-line">
+			<button class="btn post-btn" title="Post Note" onclick="postNote()">Post</button>
 		</div>
 	</body>
 	<script defer src="src/handler.js"></script>
 	<script defer src="src/mongoGet.js"></script>
 	<script defer src="src/mongoPut.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script type="text/javascript">
+	</script>
 </html>
