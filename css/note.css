@@ -1,0 +1,27 @@
+.note {
+	width: 18vw; min-height: 10vh;
+	background-color: rgb(20, 20, 20); color: rgb(255, 255, 255);
+	position: relative;
+	padding-top: 1vmin; padding-bottom: 1vmin; padding-left: 2vmin; padding-right: 2vmin;
+	border-style: none; border-radius: 8px;
+}
+.note:focus {
+	border-style: solid; border-width: 2px;
+	border-color: rgb(239, 239, 239);
+}
+.note-padding {
+	display: inline-flex;
+	background-color: transparent;
+	padding: 1vmin;
+}
+p {
+	background-color: transparent;
+	margin: 0;
+	padding: 0;
+}
+.text {
+	font-size: 32px; font-weight: 600;
+}
+.bottom-text {
+	font-weight: 28px;
+}
