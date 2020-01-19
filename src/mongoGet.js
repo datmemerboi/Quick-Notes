@@ -1,3 +1,8 @@
+function deleteNote(child){
+	var parent = child.parentNode.parentNode;
+	document.getElementById('container').removeChild(parent);
+}
+
 function createNote(Title, Content) {
 	var padded = document.createElement("DIV");
 	padded.setAttribute('class', "note-padding");
@@ -15,8 +20,16 @@ function createNote(Title, Content) {
 	bottomText.setAttribute('class', "bottom-text");
 	bottomText.innerHTML = Content;
 
+	var deleteBtn = document.createElement("BUTTON");
+	deleteBtn.setAttribute('class', "delete-btn");
+	deleteBtn.setAttribute('onclick', "deleteNote(this)");
+	var deleteIcon = document.createElement("I");
+	deleteIcon.setAttribute('class', "fa fa-trash");
+	deleteBtn.appendChild(deleteIcon);
+
 	divi.appendChild(text);
 	divi.appendChild(bottomText);
+	divi.appendChild(deleteBtn);
 	
 	padded.appendChild(divi);
 	document.getElementById('container').appendChild(padded);
