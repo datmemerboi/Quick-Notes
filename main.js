@@ -4,9 +4,8 @@ let mainWindow;
 
 function createWindow() {
 	mainWindow = new BrowserWindow({
-		width:1920,
-		height:1080,
-		resizable:false,
+		width:1920, height:1080,
+		resizable:false, icon:"./favicon.png",
 		webPreferences:{ nodeIntegration:true }
 	});
 	mainWindow.loadFile('index.html');
