@@ -10,23 +10,15 @@
 	<link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css">
 	<body>
-		<div id="container">
-			<div class="note-padding">
-				<div class="note" name="note" contenteditable="true">
-					<p class="text">Roses are red.</p>
-					<p>Violets are blue.<br>Can't see anything better..<br>
-					than me and you!
-					</p>
-					<button class="delete-btn" onclick="deleteNote(this);"><i class="fa fa-trash"></i></button>
-				</div>
-			</div>
-		</div>
+		<div id="container"></div>
 		<div class="menu-bar">
 			<button class="btn add-btn" title="New Note" onclick="switchNewNote()">+</button>
 		</div>
 		<div id="new-note" class="new-note">
-			<div id="new-title" name="new-title" class="text-input" contenteditable="true"></div><br class="break-line">
-			<div id="new-content" name="new-content" class="bottom-text-input" contenteditable="true"></div><br clear="break-line">
+			<div id="new-title" name="new-title" class="text-input" contenteditable="true"></div>
+			<br class="break-line"><br class="break-line">
+			<div id="new-content" name="new-content" class="bottom-text-input" contenteditable="true"></div>
+			<br class="break-line"><br class="break-line">
 			<button class="btn post-btn" title="Post Note" onclick="postNote()">Post</button>
 		</div>
 	</body>

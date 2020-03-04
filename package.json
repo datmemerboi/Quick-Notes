@@ -10,7 +10,6 @@
   "author": "DMB",
   "license": "ISC",
   "dependencies": {
-    "mongodb": "^3.4.0",
-    "redis": "^2.8.0"
+    "mongodb": "^3.5.4"
   }
 }
