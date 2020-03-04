@@ -5,7 +5,7 @@ function deleteNote(child){
 	MongoClient.connect("mongodb://localhost:27017", (err, conn)=>{
 		if(err)
 			throw err;
-		else{
+		else {
 			conn.db('Quick').collection('Notes').deleteOne({_id: new mongodb.ObjectID(ID)}, (err, res)=>{
 				if(err)
 					throw err;
@@ -13,7 +13,6 @@ function deleteNote(child){
 					document.getElementById('container').removeChild(parent);
 				}
 			});
-			
 		}
 	});
 }
@@ -21,17 +20,17 @@ function deleteNote(child){
 function createNote(Title, Content, ID) {
 	var padded = document.createElement("DIV");
 	padded.setAttribute('class', "note-padding");
-	
+
 	var divi = document.createElement("DIV");
 	divi.setAttribute('class', "note");
 	divi.setAttribute('name', "note");
 	divi.setAttribute('contenteditable', "true");
 	divi.setAttribute('id', ID);
-	
+
 	var text = document.createElement("P");
 	text.setAttribute('class', "text");
 	text.innerHTML = Title;
-	
+
 	var bottomText = document.createElement("P");
 	bottomText.setAttribute('class', "bottom-text");
 	bottomText.innerHTML = Content;
@@ -46,7 +45,7 @@ function createNote(Title, Content, ID) {
 	divi.appendChild(text);
 	divi.appendChild(bottomText);
 	divi.appendChild(deleteBtn);
-	
+
 	padded.appendChild(divi);
 	document.getElementById('container').appendChild(padded);
 }

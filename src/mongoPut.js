@@ -5,7 +5,7 @@ function postNote() {
 
 	MongoClient.connect("mongodb://localhost:27017", (err, conn)=>{
 		if(err){ throw err; }
-		else{
+		else {
 			if(row_title!=undefined && row_content!=undefined)
 			{
 				var row = {'Title':row_title, 'Content':row_content};
