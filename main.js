@@ -1,4 +1,8 @@
-const {app, BrowserWindow} = require('electron');
+const electron = require('electron');
+const app = electron.app;
+const BrowserWindow = electron.BrowserWindow;
+const Menu = electron.Menu;
+const child = require('child_process')
 
 let mainWindow;
 
@@ -14,7 +18,49 @@ function createWindow() {
 	});
 }
 
-app.on('ready', createWindow);
+app.on('ready', ()=>{
+	var template = [
+		{
+			label:"Backup",
+			submenu:[
+				{
+					label:"Export Now",
+					click:()=>{
+						child.exec("node src/createBackup.js", (err, stdout)=>{
+							if(err){throw err;}
+						});
+						}
+				},{
+					type:"separator"
+				},
+				{
+					label:"View Backup files",
+					click:()=>{
+						electron.shell.showItemInFolder("./backup/ ");
+					}
+				}
+			]
+		},
+		{
+			label:"Github",
+			click:()=>{
+				electron.shell.openExternal("https://github.com/datmemerboi/");
+			}
+		},
+		{
+			label:"Inspect",
+			click:()=>{mainWindow.webContents.openDevTools()},
+			accelerator:"CmdOrCtrl+Shift+I"
+		},
+		{
+			label:"Quit",
+			role:"quit"
+		}
+	]
+	menuBar = Menu.buildFromTemplate(template);
+	Menu.setApplicationMenu(menuBar)
+	createWindow();
+});
 app.on('activate', ()=>{
 	if(mainWindow==null)
 		createWindow();
