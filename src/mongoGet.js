@@ -1,25 +1,8 @@
-function deleteNote(child){
-	var parent = child.parentNode.parentNode;
-	var ID = child.parentNode.id;
-	var mongodb = require('mongodb');
-	MongoClient.connect("mongodb://localhost:27017", (err, conn)=>{
-		if(err)
-			throw err;
-		else {
-			conn.db('Quick').collection('Notes').deleteOne({_id: new mongodb.ObjectID(ID)}, (err, res)=>{
-				if(err)
-					throw err;
-				else{
-					document.getElementById('container').removeChild(parent);
-				}
-			});
-		}
-	});
-}
-
 function createNote(Title, Content, ID) {
 	var padded = document.createElement("DIV");
 	padded.setAttribute('class', "note-padding");
+	padded.setAttribute('onmouseover',"showOptionsDiv(this)");
+	padded.setAttribute('onmouseout',"hideOptionsDiv(this)");
 
 	var divi = document.createElement("DIV");
 	divi.setAttribute('class', "note");
@@ -35,16 +18,20 @@ function createNote(Title, Content, ID) {
 	bottomText.setAttribute('class', "bottom-text");
 	bottomText.innerHTML = Content;
 
+	var options = document.createElement("DIV");
+	options.setAttribute('class', "options-div");
+
 	var deleteBtn = document.createElement("BUTTON");
 	deleteBtn.setAttribute('class', "delete-btn");
 	deleteBtn.setAttribute('onclick', "deleteNote(this)");
 	var deleteIcon = document.createElement("I");
 	deleteIcon.setAttribute('class', "fa fa-trash");
 	deleteBtn.appendChild(deleteIcon);
+	options.appendChild(deleteBtn);
 
 	divi.appendChild(text);
 	divi.appendChild(bottomText);
-	divi.appendChild(deleteBtn);
+	divi.appendChild(options);
 
 	padded.appendChild(divi);
 	document.getElementById('container').appendChild(padded);
