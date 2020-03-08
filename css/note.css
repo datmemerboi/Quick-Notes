@@ -1,9 +1,12 @@
 .note {
-	width: 18vw; min-height: 10vh;
+	width: 20vw; min-height: 10vh;
 	background-color: rgb(20, 20, 20); color: rgb(255, 255, 255);
 	position: relative;
 	padding-top: 1vmin; padding-bottom: 1vmin; padding-left: 2vmin; padding-right: 2vmin;
 	border-style: none; border-radius: 8px;
+}
+.note:hover{
+	background-color: rgb(40, 40, 40);
 }
 .note:focus {
 	border-style: solid; border-width: 2px;
@@ -13,6 +16,11 @@
 	display: inline-flex;
 	background-color: transparent;
 	padding: 1vmin;
+}
+.options-div {
+	width: inherit;	height: 3vh;
+	display: none;
+	background-color: transparent;
 }
 p {
 	background-color: transparent;
