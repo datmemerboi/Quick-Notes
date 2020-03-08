@@ -5,3 +5,11 @@ function switchNewNote() {
 	else
 		document.getElementById('new-note').style.display = "";
 }
+
+function showOptionsDiv(attr){
+	attr.childNodes[0].lastElementChild.style.display = "block";
+}
+
+function hideOptionsDiv(attr){
+	attr.childNodes[0].lastElementChild.style.display = "none";
+}
