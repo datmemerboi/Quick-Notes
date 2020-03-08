@@ -21,6 +21,15 @@ function createWindow() {
 app.on('ready', ()=>{
 	var template = [
 		{
+			label:"Menu",
+			submenu:[
+				{
+					label:"Refresh",
+					role:"reload"
+				}
+			]
+		},
+		{
 			label:"Backup",
 			submenu:[
 				{
@@ -65,3 +74,4 @@ app.on('activate', ()=>{
 	if(mainWindow==null)
 		createWindow();
 });
+process.env['ELECTRON_DISABLE_SECURITY_WARNINGS'] = 'true';
