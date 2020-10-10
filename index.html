@@ -3,31 +3,22 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Take Notes</title>
+		<link rel="stylesheet" href="static/master.css" />
 	</head>
-	<link rel="stylesheet" href="css/master.css">
-	<link rel="stylesheet" href="css/button.css">
-	<link rel="stylesheet" href="css/note.css">
-	<link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css">
 	<body>
-		<div id="container"></div>
-		<div class="menu-bar">
-			<button class="btn add-btn" title="New Note" onclick="switchNewNote()">+</button>
-		</div>
-		<div id="new-note" class="new-note">
-			<div id="new-title" name="new-title" class="text-input" contenteditable="true"></div>
-			<br class="break-line"><br class="break-line">
-			<div id="new-content" name="new-content" class="bottom-text-input" contenteditable="true"></div>
-			<br class="break-line"><br class="break-line">
-			<button class="btn post-btn" title="Post Note" onclick="postNote()">Post</button>
-		</div>
+		<div id="container" class="container" />
 	</body>
-	<script defer src="src/handler.js"></script>
-	<script defer src="src/mongoGet.js"></script>
-	<script defer src="src/mongoPut.js"></script>
-	<script defer src="src/mongoDelete.js"></script>
+	<script defer src="./get-from-json.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-	<script type="text/javascript">
-	</script>
 </html>
+<!-- <div class="menu-bar">
+	<button class="btn add-btn" title="New Note" onclick="switchNewNote()">+</button>
+</div>
+<div id="new-note" class="new-note">
+	<div id="new-title" name="new-title" class="text-input" contenteditable="true"></div>
+	<br class="break-line"><br class="break-line">
+	<div id="new-content" name="new-content" class="bottom-text-input" contenteditable="true"></div>
+	<br class="break-line"><br class="break-line">
+	<button class="btn post-btn" title="Post Note" onclick="postNote()">Post</button>
+</div> -->
