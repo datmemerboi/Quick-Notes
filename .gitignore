@@ -1,0 +1,6 @@
+node_modules/
+favicon.png
+package-lock.json
+static/
+write-to-json.js
+data/data-format.json
