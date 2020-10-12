@@ -32,7 +32,23 @@
     {
       "type": "Task",
       "id": "Task001",
-      "status": 0
+      "title": "Parent",
+      "children": [
+        {
+          "type": "ChildTask",
+          "id": "Child001:Task001",
+          "content": "Item 1",
+          "status": 0
+        },
+        {
+          "type": "ChildTask",
+          "id": "Child002:Task001",
+          "content": "Item 2",
+          "status": 1
+        }
+      ],
+      "status": 0,
+      "created_at": 1302434493
     }
   ]
 }
