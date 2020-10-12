@@ -1,6 +1,9 @@
 node_modules/
 favicon.png
 package-lock.json
-static/
+static/ProximaNova/
+static/*.css
 write-to-json.js
 data/data-format.json
+noder.js
+*.svg
