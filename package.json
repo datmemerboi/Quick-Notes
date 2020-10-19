@@ -1,10 +1,9 @@
 {
   "name": "quick-notes",
-  "version": "1.0.1",
+  "version": "2.0.1",
   "description": "Note Taker App",
   "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "build-sass": "node-sass --include-path scss --output-style expanded static/master.scss static/master.css",
     "watch-sass": "node-sass --watch static/master.scss static/master.css --output-style expanded",
     "open-electron": "electron .",
@@ -14,7 +13,7 @@
   "license": "ISC",
   "dependencies": {
     "electron": "^10.1.3",
-    "mongodb": "^3.5.4"
+    "jquery": "^3.5.1"
   },
   "devDependencies": {
     "node-sass": "^4.14.1"

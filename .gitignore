@@ -1,9 +1,19 @@
-node_modules/
+# IMAGES
 favicon.png
-package-lock.json
+*.svg
+
+# STATIC FILES
 static/ProximaNova/
 static/*.css
+
+# JSON
 write-to-json.js
 data/data-format.json
+data/copy-main.json
+
+# JS
 noder.js
-*.svg
+
+# NPM
+node_modules/
+package-lock.json
