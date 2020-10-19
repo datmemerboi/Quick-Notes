@@ -1,5 +1,4 @@
-const fs = require('fs'),
-      path = require('path');
+const path = require('path');
 
 $.getJSON(path.join(__dirname, 'data', 'main.json'), (object) => {
   var objDocArr = object.docs;
@@ -36,7 +35,7 @@ $.getJSON(path.join(__dirname, 'data', 'main.json'), (object) => {
     }
     else if(objDocArr[i].type === "Task") {
       let taskDiv = document.createElement('div');
-      taskDiv.setAttribute('class', 'tasks');
+      objDocArr[i].status === true ? taskDiv.setAttribute('class', 'tasks') : taskDiv.setAttribute('class', 'tasks mark-done');
 
       if(objDocArr[i].title) {
         let titleH5 = document.createElement('h5');
@@ -46,11 +45,21 @@ $.getJSON(path.join(__dirname, 'data', 'main.json'), (object) => {
       if(objDocArr[i].children && objDocArr[i].children.length) {
         let unorder = document.createElement('ol');
         objDocArr[i].children.forEach(child => {
+          // let checkDiv = document.createElement('div');
+          // checkDiv.setAttribute('class', 'task-check-inline');
+
+          // let check = document.createElement('input');
+          // check.setAttribute('type', 'checkbox');
+          // checkDiv.appendChild(check);
+
           let listItem = document.createElement('li');
-          child.status === 1 ? listItem.setAttribute('class', 'list-item') : listItem.setAttribute('class', 'list-item mark-done');
+          child.status === true ? listItem.setAttribute('class', 'list-item') : listItem.setAttribute('class', 'list-item mark-done');
           listItem.innerHTML = child.content;
-          listItem.setAttribute('onclick', `console.log('${this}');`)
+          listItem.setAttribute('onclick', `toggleTaskStatus(${JSON.stringify(child)})`)
+          // checkDiv.appendChild(listItem);
+
           unorder.appendChild(listItem);
+          // unorder.appendChild(checkDiv);
         });
         if(objDocArr[i].children.length > 9) {
           // With scrollable
