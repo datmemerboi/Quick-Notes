@@ -1,54 +1,56 @@
 {
-  "total_docs": 5,
-  "number_of_notes": 4,
-  "number_of_tasks": 1,
-  "docs": [
-    {
-      "type": "Note",
-      "id": "Note001",
-      "title": "First Note",
-      "created_at": 1502343853
-    },
-    {
-      "type": "Note",
-      "id": "Note002",
-      "title": "Second note",
-      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque gravida lacus nec nulla aliquet, et blandit nunc sodales. Etiam et nibh finibus, finibus lorem eget, ornare nisl. Aliquam tincidunt convallis orci eu maximus. Fusce erat arcu, lacinia pretium pretium ut, convallis ac arcu. Nam ut posuere lectus. Aenean id quam ac lectus tincidunt volutpat. Integer id metus id ligula dapibus fringilla vitae ultricies massa. Mauris vel tellus a urna tincidunt elementum. Nullam vel metus lacinia eros faucibus tempor id ut quam. Duis condimentum elementum ante, at aliquet mi interdum eu. Ut ut sapien lorem.<br/><b>Aenean eu lacinia enim, et</b> lacinia diam. Proin eget nunc commodo, ultrices purus ac, congue dui. Morbi laoreet, tellus pellentesque sollicitudin dapibus, ligula justo rutrum orci, tristique sollicitudin nulla arcu ut nisi. Donec suscipit risus nec enim pretium porta. Cras sit amet tortor sit amet dolor scelerisque scelerisque vel eu arcu. Pellentesque semper tortor in convallis consectetur. Donec pharetra in nisl vitae porttitor. Mauris eget aliquet massa, eu euismod sapien. Nullam eu auctor erat, ut aliquam metus. Etiam quis purus faucibus, pretium dolor nec, scelerisque odio. Praesent ac iaculis purus, in mattis dolor. Nunc pellentesque eros nec libero ultricies, a scelerisque metus aliquet. Ut gravida convallis libero vitae viverra.",
-      "created_at": 1202343853
-    },
-    {
-      "type": "Note",
-      "id": "Note003",
-      "title": "Third Note",
-      "content": "This note definetly has some content in it",
-      "created_at": 1602353853
-    },
-    {
-      "type": "Note",
-      "id": "Note004",
-      "content": "Final note <b>without</b> any title<br/><ul><li>Item number 1</li><li>Item number 2</li></ul>",
-      "created_at": 604343853
-    },
-    {
-      "type": "Task",
-      "id": "Task001",
-      "title": "Parent",
-      "children": [
+    "total_docs": 5,
+    "number_of_notes": 4,
+    "number_of_tasks": 1,
+    "docs": [
         {
-          "type": "ChildTask",
-          "id": "Child001:Task001",
-          "content": "Item 1",
-          "status": 0
+            "type": "Note",
+            "id": "Note001",
+            "title": "First Note",
+            "created_at": 1502343853
         },
         {
-          "type": "ChildTask",
-          "id": "Child002:Task001",
-          "content": "Item 2",
-          "status": 1
+            "type": "Note",
+            "id": "Note002",
+            "title": "Second note",
+            "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque gravida lacus nec nulla aliquet, et blandit nunc sodales. Etiam et nibh finibus, finibus lorem eget, ornare nisl. Aliquam tincidunt convallis orci eu maximus. Fusce erat arcu, lacinia pretium pretium ut, convallis ac arcu. Nam ut posuere lectus. Aenean id quam ac lectus tincidunt volutpat. Integer id metus id ligula dapibus fringilla vitae ultricies massa. Mauris vel tellus a urna tincidunt elementum. Nullam vel metus lacinia eros faucibus tempor id ut quam. Duis condimentum elementum ante, at aliquet mi interdum eu. Ut ut sapien lorem.<br/><b>Aenean eu lacinia enim, et</b> lacinia diam. Proin eget nunc commodo, ultrices purus ac, congue dui. Morbi laoreet, tellus pellentesque sollicitudin dapibus, ligula justo rutrum orci, tristique sollicitudin nulla arcu ut nisi. Donec suscipit risus nec enim pretium porta. Cras sit amet tortor sit amet dolor scelerisque scelerisque vel eu arcu. Pellentesque semper tortor in convallis consectetur. Donec pharetra in nisl vitae porttitor. Mauris eget aliquet massa, eu euismod sapien. Nullam eu auctor erat, ut aliquam metus. Etiam quis purus faucibus, pretium dolor nec, scelerisque odio. Praesent ac iaculis purus, in mattis dolor. Nunc pellentesque eros nec libero ultricies, a scelerisque metus aliquet. Ut gravida convallis libero vitae viverra.",
+            "created_at": 1202343853
+        },
+        {
+            "type": "Note",
+            "id": "Note003",
+            "title": "Third Note",
+            "content": "This note definetly has some content in it",
+            "created_at": 1602353853
+        },
+        {
+            "type": "Note",
+            "id": "Note004",
+            "content": "Final note <b>without</b> any title<br/><ul><li>Item number 1</li><li>Item number 2</li></ul>",
+            "created_at": 604343853
+        },
+        {
+            "type": "Task",
+            "id": "Task001",
+            "title": "Parent",
+            "children": [
+                {
+                    "type": "ChildTask",
+                    "id": "Child001:Task001",
+                    "content": "Item 1",
+                    "status": true,
+                    "created_at": 1302434493
+                },
+                {
+                    "type": "ChildTask",
+                    "id": "Child002:Task001",
+                    "content": "Item 2",
+                    "status": true,
+                    "created_at": 1302434493
+                }
+            ],
+            "status": true,
+            "created_at": 1302434493
         }
-      ],
-      "status": 0,
-      "created_at": 1302434493
-    }
-  ]
+    ]
 }
