@@ -1,5 +1,3 @@
-const fs = require('fs');
-
 function readFromFile() {
   return new Promise(function(resolve, reject) {
     fs.readFile(path.join(__dirname, 'data', 'main.json'), (err, obj) => {

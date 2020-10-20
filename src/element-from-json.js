@@ -1,5 +1,3 @@
-const path = require('path');
-
 $.getJSON(path.join(__dirname, 'data', 'main.json'), (object) => {
   var objDocArr = object.docs;
   // var notesArr = object.docs.filter(doc => doc.type === "Note");
@@ -45,21 +43,11 @@ $.getJSON(path.join(__dirname, 'data', 'main.json'), (object) => {
       if(objDocArr[i].children && objDocArr[i].children.length) {
         let unorder = document.createElement('ol');
         objDocArr[i].children.forEach(child => {
-          // let checkDiv = document.createElement('div');
-          // checkDiv.setAttribute('class', 'task-check-inline');
-
-          // let check = document.createElement('input');
-          // check.setAttribute('type', 'checkbox');
-          // checkDiv.appendChild(check);
-
           let listItem = document.createElement('li');
           child.status === true ? listItem.setAttribute('class', 'list-item') : listItem.setAttribute('class', 'list-item mark-done');
           listItem.innerHTML = child.content;
-          listItem.setAttribute('onclick', `toggleTaskStatus(${JSON.stringify(child)})`)
-          // checkDiv.appendChild(listItem);
-
+          listItem.setAttribute('onclick', `toggleTaskStatus(${JSON.stringify(child)})`);
           unorder.appendChild(listItem);
-          // unorder.appendChild(checkDiv);
         });
         if(objDocArr[i].children.length > 9) {
           // With scrollable
