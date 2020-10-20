@@ -6,7 +6,7 @@
         {
             "type": "Note",
             "id": "Note001",
-            "title": "First Note",
+            "title": "Just an imp title",
             "created_at": 1502343853
         },
         {
@@ -38,7 +38,7 @@
                     "type": "ChildTask",
                     "id": "Child001:Task001",
                     "content": "Item 1",
-                    "status": true,
+                    "status": false,
                     "created_at": 1302434493
                 },
                 {

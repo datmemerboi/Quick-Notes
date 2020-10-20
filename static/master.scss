@@ -22,13 +22,15 @@
 $dullWhiteBG: #F0F0F0;
 $noteWhiteBG: #F3F3F3;
 $noteBorderBG: #DDD;
-$doneTaskBG: #E5E7E9;
+$doneTaskBG: #DBDADA;
+// $doneTaskBG: #E5E7E9;
 $scrollThumbBG: #666;
 $scrollTrackBG: #D5D8DC;
 // $scrollTrackBG: #EAECEE;
 $fadedGreyText: #666;
 $blueGreyText: #5D6D7E;
 $tomatoRedBG: #FF6347;
+$bloodRedBG: #C70039;
 $jeanBlueBG: #2A6696;
 
 $colorsArray: $blueGreyText, $tomatoRedBG, $jeanBlueBG;
@@ -160,15 +162,15 @@ ul, ol {
   padding: 0;
 
   li {
-    background-color: #C70039;
     list-style: none;
-    margin: 1vmin 0 1vmin 0;
+    margin: 1vmin 0 1vmin 1vmin;
   }
   li.list-item {
     background-color: $jeanBlueBG;
     border: none; border-radius: 3px;
     color: white;
-    padding: 0 0.35vmin 0 0.35vmin;
+    margin: 1vmin 0 1vmin 0;
+    padding: 0 0.5vmin 0 0.5vmin;
 
     &.mark-done {
       background-color: $blueGreyText;
@@ -179,8 +181,8 @@ ul, ol {
 }
 
 @-webkit-keyframes moveUp {
-  from { top: -1em };
-  to { top: 0 }
+  from { top: 0vh };
+  to { top: 11vh }
 }
 
 div.new-note-modal {
@@ -188,27 +190,41 @@ div.new-note-modal {
   width: 100vw; height: 100vh;
   position: absolute; top: 0; left: 0;
   background-color: rgba(0, 0, 0, 0.5);
-  animation: 10s linear 10s moveUp;
 
   #new-note {
+    animation-name: moveUp;
+    animation-duration: 0.5s;
     width: 30vw; height: 70vh;
     background-color: $noteWhiteBG !important;
     border: solid 1px $noteBorderBG; border-radius: 8px;
     display: block;
     position: relative; top: 11vh; left: 34vw;
+    padding: 1vmin;
+
+    .input-bar {
+      &.title-bar {
+        font-size: 1.2em;
+      }
+      &.content-box {
+        height: 40vh;
+      }
+    }
+
+    label {
+      font-size: 1.4em;
+      color: $fadedGreyText;
+      font-weight: 600;
+    }
   }
 }
-// ol {
-//   list-style: none;
-//   padding: 0;
-//   margin: 0;
-//
-//   li {
-//     background-color: #C70039;
-//     list-style: none;
-//     margin: 1vmin 0 1vmin 0;
-//   }
-//   li.list-item {
-//     background-color: $jeanBlueBG;
-//   }
-// }
+
+// INPUT
+.input-bar {
+    width: inherit;
+    height: 8vh;
+    overflow-y: auto;
+    background-color: $dullWhiteBG;
+    color: black;
+    border: solid 1px $noteBorderBG;
+    border-radius: 3px;
+}

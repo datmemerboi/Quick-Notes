@@ -10,33 +10,18 @@
 		<button type="button" onclick = toggleDisplayNewNote()>
 			+
 		</button>
-		<div class = "new-note-modal" onclick = toggleDisplayNewNote()>
-			<div id="new-note"></div>
+		<div class = "new-note-modal">
+			<div id="new-note">
+				<label for="new-note-title">Title (100 characters max.)</label>
+				<div id="new-note-title" contenteditable="true" class="input-bar title-bar"></div>
+				<label for="new-note-content">Content (HTML)</label>
+				<div id="new-note-content" contenteditable="true" class="input-bar content-box"></div>
+			</div>
 		</div>
 	</body>
+	<script defer src="src/index.js"></script>
 	<script defer src="src/element-from-json.js"></script>
 	<script defer src="src/file-handler.js"></script>
 	<script defer src="src/task-handler.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-	<script>
-		function toggleDisplayNewNote() {
-			var modal = document.getElementsByClassName('new-note-modal')[0];
-			modal.style.display === "" || modal.style.display === null
-				? modal.style.display = 'block'
-				: modal.style.display = null;
-			// document.getElementsByClassName('new-note-modal')[0].style.display
-			// getElementById('new-note').style.display = 'block';
-		}
-	</script>
+	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
 </html>
-<!-- <div class="menu-bar">
-	<button class="btn add-btn" title="New Note" onclick="switchNewNote()">+</button>
-</div>
-<div id="new-note" class="new-note">
-	<div id="new-title" name="new-title" class="text-input" contenteditable="true"></div>
-	<br class="break-line"><br class="break-line">
-	<div id="new-content" name="new-content" class="bottom-text-input" contenteditable="true"></div>
-	<br class="break-line"><br class="break-line">
-	<button class="btn post-btn" title="Post Note" onclick="postNote()">Post</button>
-</div> -->
