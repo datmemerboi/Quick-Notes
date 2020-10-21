@@ -1,0 +1,274 @@
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url("./ProximaNova/ProximaNovaA-Bold.woff") format("woff");
+  font-weight: 800;
+}
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url("./ProximaNova/ProximaNovaA-Light.woff") format("woff");
+  font-weight: 200;
+}
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url("./ProximaNova/ProximaNovaA-Semibold.woff") format("woff");
+  font-weight: 600;
+}
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url("./ProximaNova/ProximaNovaA-Regular.woff") format("woff");
+}
+
+// COLOR CONSTANTS
+$dullWhiteBG: #F0F0F0;
+$noteWhiteBG: #F3F3F3;
+$noteBorderBG: #DDD;
+$doneTaskBG: #DBDADA;
+// $doneTaskBG: #E5E7E9;
+$scrollThumbBG: #666;
+$scrollTrackBG: #D5D8DC;
+// $scrollTrackBG: #EAECEE;
+$fadedGreyText: #666;
+$blueGreyText: #5D6D7E;
+$tomatoRedBG: #FF6347;
+$bloodRedBG: #C70039;
+$jeanBlueBG: #2A6696;
+$acceptenceGreenBG: #58D68D;
+
+$colorsArray: $blueGreyText, $tomatoRedBG, $jeanBlueBG;
+
+* {
+  font-family: "Proxima Nova", sans-serif;
+  h1 { font-size: 1.8em; }
+  h2 { font-size: 1.6em; }
+  h3 { font-size: 1.4em; }
+  h4 { font-size: 1.2em; }
+  h5 {
+    font-size: 1.2em;
+    color: $fadedGreyText;
+  }
+}
+body {
+  background-color: $dullWhiteBG;
+  font-size: 1em;
+
+  &::-webkit-scrollbar { width: 1.35vmin; }
+  &::-webkit-scrollbar-track {
+    background-color: $scrollTrackBG;
+    border-radius: 3px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: $scrollThumbBG;
+    border-radius: 3px;
+  }
+}
+
+.container {
+  width: 88vw; max-width: 88vw; min-height: 96vh;
+  position: absolute; left: 5vw; top: 0;
+  padding: 1vmin 1vmin 3vmin 1vmin;
+}
+div.notes {
+  min-width: 7vw; max-width: 28vw;
+  min-height: 5vh; max-height: 40vh;
+  background-color: $noteWhiteBG;
+  border: solid 1px $noteBorderBG; border-radius: 8px;
+  padding: 2vmin 3vmin 2vmin 3vmin;
+  margin: 1vmin;
+  display: inline-flex;
+  flex-direction: column;
+
+  h5, p {
+    display: block;
+    margin: 0 1vmin 0 1vmin;
+  }
+  div.scrollable {
+    height: inherit; max-height: 30vh; width: inherit;
+    overflow-y: auto;
+    display: block;
+
+    &::-webkit-scrollbar { width: 1vmin; }
+    &::-webkit-scrollbar-track {
+      border-radius: 8px;
+      background-color: $scrollTrackBG !important;
+    }
+    &::-webkit-scrollbar-thumb {
+      border-radius: 8px;
+      background-color: $scrollThumbBG !important;
+    }
+  }
+}
+/*
+.notes-container {
+  width: inherit; height: 85vh;
+  position: absolute;
+  overflow-y: scroll;
+}
+.notes-footer {
+  position: relative; bottom: 0;
+  width: inherit; height: 3vh;
+  background-color: purple !important;
+}
+*/
+// TASKS
+div.tasks {
+  min-width: 7vw; max-width: 28vw;
+  min-height: 5vh; max-height: 40vh;
+  background-color: $noteWhiteBG;
+  border: solid 1px $noteBorderBG; border-radius: 8px;
+  padding: 2vmin 3vmin 2vmin 3vmin;
+  margin: 1vmin;
+  display: inline-flex;
+  flex-direction: column;
+
+  &.mark-done {
+    background-color: $doneTaskBG !important;
+  }
+  h5, p {
+    margin: 0;
+    padding: 0;
+  }
+  div.scrollable {
+    height: inherit; max-height: 30vh; width: inherit;
+    overflow-y: auto;
+    display: block;
+
+    &::-webkit-scrollbar { width: 1vmin; }
+    &::-webkit-scrollbar-track {
+      border-radius: 8px;
+      background-color: $scrollTrackBG !important;
+    }
+    &::-webkit-scrollbar-thumb {
+      border-radius: 8px;
+      background-color: $scrollThumbBG !important;
+    }
+  }
+}
+
+div.task-bar {
+  width: 20vw; height: 2vh;
+  background-color: grey;
+  display: flex;
+  flex-direction: row;
+
+  .task-progress {
+    width: 1%; height: 100%;
+    background-color: orange !important;
+  }
+}
+
+// LISTS
+ul, ol {
+  margin: 0;
+  list-style: none;
+  padding: 0;
+
+  li {
+    list-style: none;
+    margin: 1vmin 0 1vmin 1vmin;
+  }
+  li.list-item {
+    background-color: $jeanBlueBG;
+    border: none; border-radius: 3px;
+    color: white;
+    margin: 1vmin 0 1vmin 0;
+    padding: 0 0.5vmin 0 0.5vmin;
+
+    &.mark-done {
+      background-color: $blueGreyText;
+      text-decoration: line-through;
+      color: black;
+    }
+  }
+}
+
+@-webkit-keyframes moveUp {
+  from { top: 0vh };
+  to { top: 11vh }
+}
+
+div.new-note-modal {
+  display: none;
+  width: 100vw; height: 100vh;
+  position: absolute; top: 0; left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+
+  #new-note {
+    animation-name: moveUp;
+    animation-duration: 0.5s;
+    width: 30vw; height: 70vh;
+    background-color: $noteWhiteBG !important;
+    border: solid 1px $noteBorderBG; border-radius: 8px;
+    display: block;
+    position: relative; top: 11vh; left: 34vw;
+    padding: 1vmin;
+
+    .input-bar {
+      &.title-bar { font-size: 1.2em; }
+      &.content-box { height: 40vh; }
+    }
+
+    label {
+      font-size: 1.4em;
+      color: $fadedGreyText;
+      font-weight: 600;
+      span {
+        font-size: 0.6em;
+      }
+    }
+  }
+  div {
+    padding: 1vmin 0 1vmin 0;
+    #switch {
+      width: 10vw; height: 3vh;
+      background-color: $scrollThumbBG !important;
+      color: white;
+      border: none;
+      position: relative;
+      left: 10vw;
+    }
+  }
+  div.confirm-btn-div {
+    position: relative;
+    left: 5vw;
+    width: 20vw;
+    text-align: center;
+    padding: 1vmin 0 1vmin 0;
+
+    button.note-confirm-btn {
+      width: 8.4vw; height: 4.2vh;
+      border: 0; border-radius: 5px;
+      margin: 0 0.5vmin 0 0.5vmin;
+
+      &.cancel {
+        border: solid 3.5px $tomatoRedBG;
+        color: $tomatoRedBG;
+
+        &:active {
+          background-color: $tomatoRedBG;
+          color: white !important;
+        }
+      }
+      &.note-down {
+        border: solid 3.5px $acceptenceGreenBG;
+        color: $acceptenceGreenBG;
+
+        &:active {
+          background-color: $acceptenceGreenBG;
+          color: black !important;
+        }
+      }
+    }
+  }
+}
+
+// INPUT
+.input-bar {
+    padding: 1vmin !important;
+    width: 96.2%;
+    height: 8vh;
+    overflow-y: auto;
+    background-color: $dullWhiteBG;
+    color: black;
+    border: solid 1px $noteBorderBG;
+    border-radius: 3px;
+}

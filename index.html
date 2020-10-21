@@ -3,31 +3,31 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Take Notes</title>
+		<link rel="stylesheet" href="static/master.css" />
 	</head>
-	<link rel="stylesheet" href="css/master.css">
-	<link rel="stylesheet" href="css/button.css">
-	<link rel="stylesheet" href="css/note.css">
-	<link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css">
 	<body>
-		<div id="container"></div>
-		<div class="menu-bar">
-			<button class="btn add-btn" title="New Note" onclick="switchNewNote()">+</button>
-		</div>
-		<div id="new-note" class="new-note">
-			<div id="new-title" name="new-title" class="text-input" contenteditable="true"></div>
-			<br class="break-line"><br class="break-line">
-			<div id="new-content" name="new-content" class="bottom-text-input" contenteditable="true"></div>
-			<br class="break-line"><br class="break-line">
-			<button class="btn post-btn" title="Post Note" onclick="postNote()">Post</button>
+		<div id="container" class="container"></div>
+		<button type="button" onclick = toggleDisplayNewNote()>
+			+
+		</button>
+		<div class = "new-note-modal">
+			<div id="new-note">
+				<label for="new-note-title">Title <span>(100 characters max.)</span></label>
+				<div id="new-note-title" contenteditable="true" class="input-bar title-bar" onkeypress="return (this.innerText.length <= 100)"></div>
+				<label for="new-note-content">Content <span>(HTML)</span></label>
+				<div id="new-note-content" contenteditable="true" class="input-bar content-box"></div>
+				<div><button id="switch">Switch to Task</button></div>
+				<div class="confirm-btn-div">
+					<button onclick="toggleDisplayNewNote()" class="note-confirm-btn cancel">Scratch that!</button>
+					<button class="note-confirm-btn note-down" onclick="noteDown()">Note that down!</button>
+				</div>
+			</div>
 		</div>
 	</body>
-	<script defer src="src/handler.js"></script>
-	<script defer src="src/mongoGet.js"></script>
-	<script defer src="src/mongoPut.js"></script>
-	<script defer src="src/mongoDelete.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-	<script type="text/javascript">
-	</script>
+	<script defer src="src/index.js"></script>
+	<script defer src="src/element-from-json.js"></script>
+	<script defer src="src/file-handler.js"></script>
+	<script defer src="src/note-handler.js"></script>
+	<script defer src="src/task-handler.js"></script>
+	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
 </html>
