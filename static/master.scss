@@ -32,6 +32,7 @@ $blueGreyText: #5D6D7E;
 $tomatoRedBG: #FF6347;
 $bloodRedBG: #C70039;
 $jeanBlueBG: #2A6696;
+$acceptenceGreenBG: #58D68D;
 
 $colorsArray: $blueGreyText, $tomatoRedBG, $jeanBlueBG;
 
@@ -202,25 +203,68 @@ div.new-note-modal {
     padding: 1vmin;
 
     .input-bar {
-      &.title-bar {
-        font-size: 1.2em;
-      }
-      &.content-box {
-        height: 40vh;
-      }
+      &.title-bar { font-size: 1.2em; }
+      &.content-box { height: 40vh; }
     }
 
     label {
       font-size: 1.4em;
       color: $fadedGreyText;
       font-weight: 600;
+      span {
+        font-size: 0.6em;
+      }
+    }
+  }
+  div {
+    padding: 1vmin 0 1vmin 0;
+    #switch {
+      width: 10vw; height: 3vh;
+      background-color: $scrollThumbBG !important;
+      color: white;
+      border: none;
+      position: relative;
+      left: 10vw;
+    }
+  }
+  div.confirm-btn-div {
+    position: relative;
+    left: 5vw;
+    width: 20vw;
+    text-align: center;
+    padding: 1vmin 0 1vmin 0;
+
+    button.note-confirm-btn {
+      width: 8.4vw; height: 4.2vh;
+      border: 0; border-radius: 5px;
+      margin: 0 0.5vmin 0 0.5vmin;
+
+      &.cancel {
+        border: solid 3.5px $tomatoRedBG;
+        color: $tomatoRedBG;
+
+        &:active {
+          background-color: $tomatoRedBG;
+          color: white !important;
+        }
+      }
+      &.note-down {
+        border: solid 3.5px $acceptenceGreenBG;
+        color: $acceptenceGreenBG;
+
+        &:active {
+          background-color: $acceptenceGreenBG;
+          color: black !important;
+        }
+      }
     }
   }
 }
 
 // INPUT
 .input-bar {
-    width: inherit;
+    padding: 1vmin !important;
+    width: 96.2%;
     height: 8vh;
     overflow-y: auto;
     background-color: $dullWhiteBG;

@@ -30,8 +30,19 @@ app.on('ready', () => {
 					label: "Refresh",
 					role: "reload",
 					accelerator: "F5"
+				},
+				{ type: "separator" },
+				{
+					label: "Inspect",
+					click: () => {
+						mainWindow.webContents.openDevTools()
+					},
+					accelerator: "F12"
 				}
 			]
+		},
+		{
+			label: "Export"
 		},
 		// {
 		// 	label: "Backup",
@@ -56,17 +67,22 @@ app.on('ready', () => {
 		// 	]
 		// },
 		{
-			label: "Github Repo",
-			click: () => {
-				electron.shell.openExternal("https://github.com/datmemerboi/Quick-Notes/");
-			}
-		},
-		{
-			label: "Inspect",
-			click: () => {
-				mainWindow.webContents.openDevTools()
-			},
-			accelerator: "F11"
+			label: "About",
+			submenu: [
+				{
+					label: "datmemerboi",
+					click: () => {
+						electron.shell.openExternal("https://datmemerboi.github.io/")
+					}
+				},
+				{ type: "separator" },
+				{
+					label: "Github Repo",
+					click: () => {
+						electron.shell.openExternal("https://www.github.com/datmemerboi/Quick-Notes/");
+					}
+				}
+			]
 		},
 		{
 			label: "Quit",
