@@ -1,5 +1,5 @@
 $.getJSON(path.join(__dirname, 'data', 'main.json'), (object) => {
-  if(Object.keys(object).length) {
+  if(object && Object.keys(object).length) {
     var objDocArr = object.docs;
     // var notesArr = object.docs.filter(doc => doc.type === "Note");
     objDocArr.sort((a,b) => b.created_at - a.created_at ); // Descending sort by created_at
@@ -29,6 +29,32 @@ $.getJSON(path.join(__dirname, 'data', 'main.json'), (object) => {
             noteDiv.appendChild(contentPara);
           }
         }
+        // Meta Notes div
+        let date = new Date(parseInt(objDocArr[i].created_at)*1000);
+        let timestamp = document.createElement('span');
+        timestamp.setAttribute('class', "timestamp");
+        timestamp.innerHTML = date.toLocaleString('default', {month: 'short'}) + " "
+          + date.getDate() + ", "
+          + date.getFullYear() + " "
+          + date.getHours() + ":"
+          + date.getMinutes();
+
+        let deleteBtn = document.createElement('button');
+        deleteBtn.setAttribute('class', "delete-btn");
+        deleteBtn.setAttribute('onclick', `deleteNote("${objDocArr[i].id}")`)
+        let deleteIcon = document.createElement('img');
+        deleteIcon.setAttribute('src', "static/trash.svg");
+        deleteIcon.setAttribute('alt', "X");
+        deleteIcon.setAttribute('class', "delete-icon");
+        deleteBtn.appendChild(deleteIcon);
+
+        let metaDiv = document.createElement('div');
+        metaDiv.setAttribute("class", "meta-notes");
+        metaDiv.appendChild(deleteBtn);
+        metaDiv.appendChild(timestamp);
+
+        noteDiv.appendChild(metaDiv);
+        noteDiv.setAttribute('id', objDocArr[i].id);
 
         document.getElementById('container').appendChild(noteDiv);
       }

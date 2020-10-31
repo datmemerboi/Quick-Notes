@@ -1,16 +1,15 @@
 Quick Notes
 =
+A desktop app to store notes as simple JSON with ElectronJS
 
 ## v2.0
-Complete re-construction underway
+Reconstructed Quick Notes is light mode now! With compacte & improved layout, quick & efficient processing. Keep a lookout as more features are on the way!
 
 Here's a sample
 ![screencap](https://raw.githubusercontent.com/datmemerboi/Quick-Notes/betterment/Screencaps/Interface%20v2.0.jpeg)
 
-A desktop software which works with Electron and data storage in MongoDB.
-
 ## v1.0
-### Requirements
-**ElectronJS**, **MongoDB**, **MongoClient** module
+A desktop software which works with Electron and data storage in MongoDB.
+Used **MongoDB** & **MongoClient** module
 
-~~Default Mongo connection:`mongodb://localhost:27017` | Database: `Quick` | Collection: `Notes`~~
+Default Mongo connection:`mongodb://localhost:27017` | Database: `Quick` | Collection: `Notes`
