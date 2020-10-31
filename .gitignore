@@ -1,10 +1,9 @@
 # IMAGES
 favicon.png
-*.svg
 
 # STATIC FILES
-static/ProximaNova/
 static/*.css
+static/close.svg
 
 # JSON
 write-to-json.js
