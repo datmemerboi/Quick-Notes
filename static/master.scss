@@ -1,42 +1,50 @@
 @font-face {
-  font-family: 'Proxima Nova';
+  font-family: "Proxima Nova";
   src: url("./ProximaNova/ProximaNovaA-Bold.woff") format("woff");
   font-weight: 800;
 }
 @font-face {
-  font-family: 'Proxima Nova';
+  font-family: "Proxima Nova";
   src: url("./ProximaNova/ProximaNovaA-Semibold.woff") format("woff");
   font-weight: 600;
 }
 @font-face {
-  font-family: 'Proxima Nova';
+  font-family: "Proxima Nova";
   src: url("./ProximaNova/ProximaNovaA-Regular.woff") format("woff");
 }
 
 // COLOR CONSTANTS
-$dullWhiteBG: #F0F0F0;
-$noteWhiteBG: #F3F3F3;
-$noteBorderBG: #DDD;
-$doneTaskBG: #DBDADA;
+$dullWhiteBG: #f0f0f0;
+$noteWhiteBG: #f3f3f3;
+$noteBorderBG: #ddd;
+$doneTaskBG: #dbdada;
 // $doneTaskBG: #E5E7E9;
 $scrollThumbBG: #666;
-$scrollTrackBG: #D5D8DC;
+$scrollTrackBG: #d5d8dc;
 // $scrollTrackBG: #EAECEE;
 $fadedGreyText: #666;
-$blueGreyText: #5D6D7E;
-$tomatoRedBG: #FF6347;
-$bloodRedBG: #C70039;
-$jeanBlueBG: #2A6696;
-$acceptenceGreenBG: #58D68D;
+$blueGreyText: #5d6d7e;
+$tomatoRedBG: #ff6347;
+$bloodRedBG: #c70039;
+$jeanBlueBG: #2a6696;
+$acceptenceGreenBG: #58d68d;
 
 $colorsArray: $blueGreyText, $tomatoRedBG, $jeanBlueBG;
 
 * {
   font-family: "Proxima Nova", sans-serif;
-  h1 { font-size: 1.8em; }
-  h2 { font-size: 1.6em; }
-  h3 { font-size: 1.4em; }
-  h4 { font-size: 1.2em; }
+  h1 {
+    font-size: 1.8em;
+  }
+  h2 {
+    font-size: 1.6em;
+  }
+  h3 {
+    font-size: 1.4em;
+  }
+  h4 {
+    font-size: 1.2em;
+  }
   h5 {
     font-size: 1.2em;
     color: $fadedGreyText;
@@ -46,7 +54,9 @@ body {
   background-color: $dullWhiteBG;
   font-size: 1em;
 
-  &::-webkit-scrollbar { width: 1.35vmin; }
+  &::-webkit-scrollbar {
+    width: 1.35vmin;
+  }
   &::-webkit-scrollbar-track {
     background-color: $scrollTrackBG;
     border-radius: 3px;
@@ -58,30 +68,42 @@ body {
 }
 
 .container {
-  width: 88vw; max-width: 88vw; min-height: 96vh;
-  position: absolute; left: 5vw; top: 0;
+  width: 88vw;
+  max-width: 88vw;
+  min-height: 96vh;
+  position: absolute;
+  left: 5vw;
+  top: 0;
   padding: 1vmin 1vmin 3vmin 1vmin;
 }
 div.notes {
-  min-width: 7vw; max-width: 28vw;
-  min-height: 5vh; max-height: 40vh;
+  min-width: 7vw;
+  max-width: 28vw;
+  min-height: 5vh;
+  max-height: 40vh;
   background-color: $noteWhiteBG;
-  border: solid 1px $noteBorderBG; border-radius: 8px;
+  border: solid 1px $noteBorderBG;
+  border-radius: 8px;
   padding: 2vmin 3vmin 2vmin 3vmin;
   margin: 1vmin;
   display: inline-flex;
   flex-direction: column;
 
-  h5, p {
+  h5,
+  p {
     display: block;
     margin: 0 1vmin 0 1vmin;
   }
   div.scrollable {
-    height: inherit; max-height: 30vh; width: inherit;
+    height: inherit;
+    max-height: 30vh;
+    width: inherit;
     overflow-y: auto;
     display: block;
 
-    &::-webkit-scrollbar { width: 1vmin; }
+    &::-webkit-scrollbar {
+      width: 1vmin;
+    }
     &::-webkit-scrollbar-track {
       border-radius: 8px;
       background-color: $scrollTrackBG !important;
@@ -92,9 +114,11 @@ div.notes {
     }
   }
   div.meta-notes {
-    width: inherit; height: 2vh;
+    width: inherit;
+    height: 2vh;
     padding: 3vmin 0 0 0;
-    position: relative; bottom: 0;
+    position: relative;
+    bottom: 0;
     align-items: center;
     flex-direction: row;
     display: inline-flex;
@@ -103,12 +127,15 @@ div.notes {
       font-size: 0.9em;
     }
     button.delete-btn {
-      margin: 0; padding: 0;
+      margin: 0;
+      padding: 0;
       border: none;
       display: inline-flex;
       img.delete-icon {
         display: inline-flex;
-        width: 25px; height: 23px;
+        width: 25px;
+        height: 23px;
+
         user-select: none;
       }
     }
@@ -128,10 +155,13 @@ div.notes {
 */
 // TASKS
 div.tasks {
-  min-width: 7vw; max-width: 28vw;
-  min-height: 5vh; max-height: 40vh;
+  min-width: 7vw;
+  max-width: 28vw;
+  min-height: 5vh;
+  max-height: 40vh;
   background-color: $noteWhiteBG;
-  border: solid 1px $noteBorderBG; border-radius: 8px;
+  border: solid 1px $noteBorderBG;
+  border-radius: 8px;
   padding: 2vmin 3vmin 2vmin 3vmin;
   margin: 1vmin;
   display: inline-flex;
@@ -140,16 +170,21 @@ div.tasks {
   &.mark-done {
     background-color: $doneTaskBG !important;
   }
-  h5, p {
+  h5,
+  p {
     margin: 0;
     padding: 0;
   }
   div.scrollable {
-    height: inherit; max-height: 30vh; width: inherit;
+    height: inherit;
+    max-height: 30vh;
+    width: inherit;
     overflow-y: auto;
     display: block;
 
-    &::-webkit-scrollbar { width: 1vmin; }
+    &::-webkit-scrollbar {
+      width: 1vmin;
+    }
     &::-webkit-scrollbar-track {
       border-radius: 8px;
       background-color: $scrollTrackBG !important;
@@ -162,19 +197,22 @@ div.tasks {
 }
 
 div.task-bar {
-  width: 20vw; height: 2vh;
+  width: 20vw;
+  height: 2vh;
   background-color: grey;
   display: flex;
   flex-direction: row;
 
   .task-progress {
-    width: 1%; height: 100%;
+    width: 1%;
+    height: 100%;
     background-color: orange !important;
   }
 }
 
 // LISTS
-ul, ol {
+ul,
+ol {
   margin: 0;
   list-style: none;
   padding: 0;
@@ -185,7 +223,8 @@ ul, ol {
   }
   li.list-item {
     background-color: $jeanBlueBG;
-    border: none; border-radius: 3px;
+    border: none;
+    border-radius: 3px;
     color: white;
     margin: 1vmin 0 1vmin 0;
     padding: 0 0.5vmin 0 0.5vmin;
@@ -198,43 +237,77 @@ ul, ol {
   }
 }
 
-@-webkit-keyframes moveUp {
-  from { top: 0vh };
-  to { top: 11vh }
+@keyframes moveUp {
+  from {
+    top: 0vh;
+  }
+  to {
+    top: 11vh;
+  }
 }
 
 button.add-btn {
-  width: 3vw; height: 5vh;
-  border: none; border-radius: 3vmin;
+  width: 3vw;
+  height: 5vh;
+  border: none;
+  border-radius: 3vmin;
 
   &:hover {
     background-color: $scrollTrackBG;
   }
   img.add-icon {
-    width: 30px; height: 30px;
+    width: 30px;
+    height: 30px;
+    user-select: none;
+  }
+}
+
+button.add-btn {
+  width: 3vw;
+  height: 5vh;
+  border: none;
+  border-radius: 3vmin;
+
+  &:hover {
+    background-color: $scrollTrackBG;
+  }
+  img.add-icon {
+    width: 30px;
+    height: 30px;
     user-select: none;
   }
 }
 
 div.new-note-modal {
   display: none;
-  width: 100vw; height: 100vh;
-  position: absolute; top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
   background-color: rgba(0, 0, 0, 0.5);
 
   #new-note {
     animation-name: moveUp;
     animation-duration: 0.5s;
-    width: 30vw; height: 70vh;
+    width: 30vw;
+    height: 70vh;
     background-color: $noteWhiteBG !important;
-    border: solid 1px $noteBorderBG; border-radius: 8px;
+    border: solid 1px $noteBorderBG;
+    border-radius: 8px;
     display: block;
-    position: relative; top: 11vh; left: 34vw;
+    position: relative;
+    top: 11vh;
+    left: 34vw;
     padding: 1vmin;
 
     .input-bar {
-      &.title-bar { font-size: 1.2em; }
-      &.content-box { height: 40vh; }
+      &.title-bar {
+        font-size: 1.2em;
+      }
+      &.content-box {
+        height: 40vh;
+      }
     }
 
     label {
@@ -249,7 +322,8 @@ div.new-note-modal {
   div {
     padding: 1vmin 0 1vmin 0;
     #switch {
-      width: 10vw; height: 3vh;
+      width: 10vw;
+      height: 3vh;
       background-color: $scrollThumbBG !important;
       color: white;
       border: none;
@@ -265,8 +339,10 @@ div.new-note-modal {
     padding: 1vmin 0 1vmin 0;
 
     button.note-confirm-btn {
-      width: 8.4vw; height: 4.2vh;
-      border: 0; border-radius: 5px;
+      width: 8.4vw;
+      height: 4.2vh;
+      border: 0;
+      border-radius: 5px;
       margin: 0 0.5vmin 0 0.5vmin;
 
       &.cancel {
@@ -293,12 +369,12 @@ div.new-note-modal {
 
 // INPUT
 .input-bar {
-    padding: 1vmin !important;
-    width: 96.2%;
-    height: 8vh;
-    overflow-y: auto;
-    background-color: $dullWhiteBG;
-    color: black;
-    border: solid 1px $noteBorderBG;
-    border-radius: 3px;
+  padding: 1vmin !important;
+  width: 96.2%;
+  height: 8vh;
+  overflow-y: auto;
+  background-color: $dullWhiteBG;
+  color: black;
+  border: solid 1px $noteBorderBG;
+  border-radius: 3px;
 }
