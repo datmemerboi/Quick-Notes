@@ -1,33 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<title>Take Notes</title>
-		<link rel="stylesheet" href="static/master.css" />
-	</head>
-	<body>
-		<div id="container" class="container"></div>
-		<button type="button" onclick ="toggleDisplayNewNote()" class="add-btn">
-			<img src="static/plus.svg" alt="+" class="add-icon">
-		</button>
-		<div class = "new-note-modal">
-			<div id="new-note">
-				<label for="new-note-title">Title <span>(100 characters max.)</span></label>
-				<div id="new-note-title" contenteditable="true" class="input-bar title-bar" onkeypress="return (this.innerText.length <= 100)"></div>
-				<label for="new-note-content">Content <span>(HTML)</span></label>
-				<div id="new-note-content" contenteditable="true" class="input-bar content-box"></div>
-				<div><button id="switch">Switch to Task</button></div>
-				<div class="confirm-btn-div">
-					<button onclick="toggleDisplayNewNote()" class="note-confirm-btn cancel">Scratch that!</button>
-					<button class="note-confirm-btn note-down" onclick="noteDown()">Note that down!</button>
-				</div>
-			</div>
-		</div>
-	</body>
-	<script defer src="src/index.js"></script>
-	<script defer src="src/element-from-json.js"></script>
-	<script defer src="src/file-handler.js"></script>
-	<script defer src="src/note-handler.js"></script>
-	<script defer src="src/task-handler.js"></script>
-	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
+  <head>
+    <meta charset="utf-8" />
+    <title>Take Notes</title>
+    <link rel="stylesheet" href="static/master.css" />
+  </head>
+
+  <body>
+    <div id="container" class="container"></div>
+    <button type="button" onclick="toggleDisplayNewNote()" class="add-btn">
+      <img src="static/plus.svg" alt="+" class="add-icon" />
+    </button>
+    <div class="new-note-modal">
+      <div id="new-note">
+        <label for="new-note-title"
+          >Title <span>(100 characters max.)</span></label
+        >
+        <div
+          id="new-note-title"
+          contenteditable="true"
+          class="input-bar title-bar"
+          onkeypress="return (this.innerText.length <= 100)"
+        ></div>
+        <label for="new-note-content">Content <span>(HTML)</span></label>
+        <div
+          id="new-note-content"
+          contenteditable="true"
+          class="input-bar content-box"
+        ></div>
+        <div><button id="switch">Switch to Task</button></div>
+        <div class="confirm-btn-div">
+          <button
+            onclick="toggleDisplayNewNote()"
+            class="note-confirm-btn cancel"
+          >
+            Scratch that!
+          </button>
+          <button class="note-confirm-btn note-down" onclick="noteDown()">
+            Note that down!
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <script defer src="src/index.js"></script>
+  <script defer src="src/element-from-json.js"></script>
+  <script defer src="src/file-handler.js"></script>
+  <script defer src="src/note-handler.js"></script>
+  <script defer src="src/task-handler.js"></script>
 </html>
